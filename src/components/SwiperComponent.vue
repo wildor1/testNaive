@@ -1,21 +1,27 @@
 <template>
-	<div>
+	<div class="swiperClass">
 		<!-- https://swiperjs.com/demos#autoplay -->
-		<swiper :autoplay="{delay:2500,disableOnInteraction:false}" :centeredSlides="true" :pagination="{clickable:true}" 
-			:space-between="30" :navigation="true" :modules="modules"
-			class="mySwiper">
-			<swiper-slide><img src="1.png" alt="" srcset=""></swiper-slide>
-			<swiper-slide><img src="2.jpg" alt="" srcset=""></swiper-slide>
+		<swiper :autoplay="{delay:2500,disableOnInteraction:false}" :centeredSlides="true" :pagination="{clickable:true}"
+			:space-between="30" :navigation="true" :loop="true" :modules="modules" class="mySwiper">
+			<swiper-slide>
+				<img src="1.jpg" alt="" srcset="">
+			</swiper-slide>
+			<swiper-slide>
+				<div
+					style="background-image: url(2.jpg);width: 100%;height: 50vh;color: red;text-align:left">
+					<p style="margin-top: 200px;margin-left: 100px;width: 100px;word-wrap: break-word">
+						日本轮子网站https://www.yueicaster.co.jp/en/
+					</p>
+				</div>
+			</swiper-slide>
 			<swiper-slide><img src="3.jpg" alt=""></swiper-slide>
 		</swiper>
-		<button @click="swiper.slideNext()">Slide to the next slide</button>
 	</div>
 </template>
 
 <script>
 	import { Swiper, SwiperSlide } from 'swiper/vue'
 	import { Autoplay, Pagination, Navigation } from "swiper";
-
 	import 'swiper/css';
 	import "swiper/css/pagination";
 	import "swiper/css/navigation";
@@ -26,18 +32,8 @@
 			SwiperSlide,
 		},
 		setup() {
-			// const onSwiper = (swiper) => {
-			// 	console.log(swiper);
-			// };
-			// const onSlideChange = () => {
-			// 	console.log('slide change');
-			// };
-			// const swiper = useSwiper();
 			return {
 				modules: [Autoplay, Pagination, Navigation],
-				// swiper,
-				// onSwiper,
-				// onSlideChange,
 			};
 		},
 	};
@@ -72,7 +68,8 @@
 	.swiper-slide img {
 		display: block;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		height: 48vh;
+		object-fit: contain;
+		/* background-size: contain; */
 	}
 </style>

@@ -1,5 +1,6 @@
 <template>
   <nav>
+    <a href="mailto:sales@XTrolley.com" id="A_9">sales@XTrolley.com</a>
     <router-link to="/">Home</router-link> |
     <router-link to="/cart">Cart</router-link> |
     <router-link to="/admin">Admin</router-link>
@@ -18,6 +19,7 @@
 
   nav {
     padding: 30px;
+    background-color: #336699;
   }
 
   nav a {
