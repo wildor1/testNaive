@@ -13,10 +13,10 @@
     >
       <swiper-slide>
         <div class="swiper-seat">
-          <dir class="textarea">
+          <div class="textarea">
             <p class="textstyle">专业的医疗台车</p>
             <p class="textstyle">质量良好</p>
-          </dir>
+          </div>
         <img src="1.jpg" alt="" srcset="" style="width: 60vw" />
       </div>
       </swiper-slide>

@@ -5,14 +5,22 @@
     <span> 中文 | EN </span>
   </header>
   <nav>
-    <router-link class="class3" to="/">All Products</router-link>
-    <div class="class4"><img src="1.jpg"></div>
-    <router-link to="/">Products</router-link>
-    <router-link to="/cart">DownLoads</router-link>
-    <router-link to="/admin">AboutUs</router-link>
+    <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" background-color="#545c64"
+      text-color="#fff" active-text-color="#ffd04b" @select="handleSelect">
+      <el-sub-menu index="1">
+        <template #title>All Products</template>
+        <el-menu-item index="1-1">item one</el-menu-item>
+        <el-menu-item index="1-2">item two</el-menu-item>
+        <el-menu-item index="1-3">item three</el-menu-item>
+      </el-sub-menu>
+      <el-menu-item index="2">News</el-menu-item>
+      <el-menu-item index="3">About Us</el-menu-item>
+      <el-menu-item index="4">What's New</el-menu-item>
+    </el-menu>
   </nav>
   <router-view />
 </template>
+
 <style>
   #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -41,43 +49,16 @@
   }
 
   nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    /* display: flex; */
+    /* width: 1600px; */
+    /* flex-direction: row;
+  justify-content: space-around ; */
     height: 50px;
     line-height: 50px;
-    line-height: 35px;
     background-color: whitesmoke;
   }
 
-  .class3 {
-    position: relative;
-  }
-
-  .class4 {
-    position: absolute;
-    top: 100px;
-    left: 50px;
-    width: 100px;
-    height: 100px;
-    display: none;
-    z-index: 100;
-  }
-.class4:hover{
-    display: block;
-  }
-  .class4>img {
-    width: 1000px;
-    height: 1000px;
-  }
-
-  .class3:hover~.class4 {
-    display: block;
-  }
-
-  
-
-   nav a {
+  nav a {
     font-weight: bold;
     font-weight: 100;
     color: #333;
