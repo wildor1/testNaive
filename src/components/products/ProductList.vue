@@ -2,7 +2,6 @@
   <div>
     <div class="products">
       <div class="container">
-        This is ProductList
       </div>
       <template v-for="product in products" :key="product._id">
         <product-item :product="product" ></product-item>
