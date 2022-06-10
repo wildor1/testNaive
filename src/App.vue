@@ -1,9 +1,17 @@
 <template>
   <header>
-    <span><router-link class="class3" to="/">首页</router-link></span>
-    <span><router-link to="/">Products</router-link></span>
-    <span><router-link to="/cart">产品</router-link></span>
-    <span><router-link to="/admin">服务中心</router-link></span>
+    <span>
+      <router-link class="class3" to="/">首页</router-link>
+    </span>
+    <span>
+      <router-link to="/">Products</router-link>
+    </span>
+    <span>
+      <router-link to="/cart">产品</router-link>
+    </span>
+    <span>
+      <router-link to="/admin">服务中心</router-link>
+    </span>
     <span> 中文 | EN </span>
   </header>
   <!-- <nav>
@@ -26,12 +34,15 @@
   }
 
   header {
+    position: fixed;
+    top: 0px;
     height: 78px;
     line-height: 78px;
     padding-right: 20px;
     background: rgba(255, 255, 255, 0.8);
     color: #000;
     text-align: right;
+    z-index: 9999;
   }
 
   header a {
@@ -67,6 +78,25 @@
 
   nav a:hover {
     color: #aaa;
+  }
+
+  .navbar.sticky-menu {
+    position: fixed;
+    top: 0;
+    animation: slide-down 0.7s;
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.349019607843137);
+    -webkit-box-shadow: 0px 0px 5px rgb(0 0 0 / 35%);
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 35%);
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
   }
 
   nav a.router-link-exact-active {
