@@ -5,7 +5,21 @@
   </div>
 
   <SwiperComponent />
-  <footer>
+
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+   <footer>
     Copyright © 2022 Apple Inc. 保留所有权利。隐私政策 使用条款 销售政策 法律信息 网站地图
     京ICP备10214630 营业执照 无线电发射设备销售备案编号11201910351200
   </footer>

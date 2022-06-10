@@ -1,17 +1,10 @@
 <template>
-  <header>
-    <span>
-      <router-link class="class3" to="/">首页</router-link>
-    </span>
-    <span>
-      <router-link to="/">Products</router-link>
-    </span>
-    <span>
-      <router-link to="/cart">产品</router-link>
-    </span>
-    <span>
-      <router-link to="/admin">服务中心</router-link>
-    </span>
+
+  <header :class="header">
+    <span><router-link class="class3" to="/">首页</router-link></span>
+    <span><router-link to="/">Products</router-link></span>
+    <span><router-link to="/cart">产品</router-link></span>
+    <span><router-link to="/admin">服务中心</router-link></span>
     <span> 中文 | EN </span>
   </header>
   <!-- <nav>
@@ -23,62 +16,87 @@
   </nav> -->
   <router-view />
 </template>
+
+<script>
+export default {
+  name: "App",
+  data() {
+    return {header:''}
+  },
+  computed: {},
+  mounted() {
+    window.addEventListener("scroll", this.init);
+  },
+  methods: {
+    init() {
+      if (document.documentElement.scrollTop > 160) {
+        this.header='showHeader'
+      }else{
+        this.header=''
+      }
+    },
+  },
+};
+</script>
 <style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    font-size: 20px;
-  }
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 20px;
+}
 
-  header {
-    position: fixed;
-    top: 0px;
-    height: 78px;
-    line-height: 78px;
-    padding-right: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #000;
-    text-align: right;
-    z-index: 9999;
-  }
 
-  header a {
-    color: #000;
-    text-decoration: none;
-  }
+header {
+  width: 100vw;
+  height: 78px;
+  line-height: 78px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  text-align: right;
+}
 
-  header span {
-    margin: 40px;
-  }
+.showHeader{
+  position: fixed;
+  top:0;
+  z-index: 9999;
+}
+header a {
+  color: #000;
+  text-decoration: none;
+}
 
-  nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 50px;
-    line-height: 50px;
-    line-height: 35px;
-    background-color: whitesmoke;
-  }
+header span {
+  margin: 40px;
+}
 
-  .class3 {
-    position: relative;
-  }
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 50px;
+  line-height: 50px;
+  line-height: 35px;
+  background-color: whitesmoke;
+}
 
-  nav a {
-    font-weight: bold;
-    font-weight: 100;
-    color: #333;
-    text-decoration: none;
-    padding: 10px;
-  }
+.class3 {
+  position: relative;
+}
 
-  nav a:hover {
-    color: #aaa;
-  }
+nav a {
+  font-weight: bold;
+  font-weight: 100;
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover {
+  color: #aaa;
+}
 
   .navbar.sticky-menu {
     position: fixed;
@@ -102,4 +120,5 @@
   nav a.router-link-exact-active {
     text-decoration: none;
   }
+
 </style>
