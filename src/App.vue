@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="header">
     <span><router-link class="class3" to="/">首页</router-link></span>
     <span><router-link to="/">Products</router-link></span>
     <span><router-link to="/cart">产品</router-link></span>
@@ -15,61 +15,88 @@
   </nav> -->
   <router-view />
 </template>
+
+<script>
+export default {
+  name: "App",
+  data() {
+    return {header:''}
+  },
+  computed: {},
+  mounted() {
+    window.addEventListener("scroll", this.init);
+  },
+  methods: {
+    init() {
+      if (document.documentElement.scrollTop > 160) {
+        this.header='showHeader'
+      }else{
+        this.header=''
+      }
+    },
+  },
+};
+</script>
 <style>
-  #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    font-size: 20px;
-  }
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 20px;
+}
 
-  header {
-    height: 78px;
-    line-height: 78px;
-    padding-right: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #000;
-    text-align: right;
-  }
+header {
+  width: 100vw;
+  height: 78px;
+  line-height: 78px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  text-align: right;
+}
 
-  header a {
-    color: #000;
-    text-decoration: none;
-  }
+.showHeader{
+  position: fixed;
+  top:0;
+  z-index: 9999;
+}
+header a {
+  color: #000;
+  text-decoration: none;
+}
 
-  header span {
-    margin: 40px;
-  }
+header span {
+  margin: 40px;
+}
 
-  nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 50px;
-    line-height: 50px;
-    line-height: 35px;
-    background-color: whitesmoke;
-  }
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 50px;
+  line-height: 50px;
+  line-height: 35px;
+  background-color: whitesmoke;
+}
 
-  .class3 {
-    position: relative;
-  }
+.class3 {
+  position: relative;
+}
 
-  nav a {
-    font-weight: bold;
-    font-weight: 100;
-    color: #333;
-    text-decoration: none;
-    padding: 10px;
-  }
+nav a {
+  font-weight: bold;
+  font-weight: 100;
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+}
 
-  nav a:hover {
-    color: #aaa;
-  }
+nav a:hover {
+  color: #aaa;
+}
 
-  nav a.router-link-exact-active {
-    text-decoration: none;
-  }
+nav a.router-link-exact-active {
+  text-decoration: none;
+}
 </style>

@@ -3,6 +3,19 @@
     <product-list></product-list>
   </div>
   <SwiperComponent />
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
+  <div style="font-size:80px">1221</div>
 </template>
 
 <script>
