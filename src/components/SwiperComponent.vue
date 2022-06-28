@@ -17,6 +17,7 @@
             <p class="textstyle">专业的医疗台车</p>
             <p class="textstyle">质量良好</p>
           </div>
+          <!-- pic size 1920 × 647 -->
         <img src="1.jpg" alt="" srcset="" style="width: 60vw" />
       </div>
       </swiper-slide>

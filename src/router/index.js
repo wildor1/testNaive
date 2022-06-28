@@ -5,9 +5,10 @@ import {
 import HomeView from '../views/HomeView.vue'
 import IndexView from '../views/Admin/IndexView.vue'
 import NewView from '../views/Admin/NewView.vue'
-import ProductsView from '../views/Admin/ProductsView.vue'
+import ProductsView from '../views/ProductsView.vue'
 import EditView from '../views/Admin/EditView.vue'
 import Detail from '../views/DetailView';
+import AboutView from '../views/AboutView';
 
 const routes = [{
     path: '/',
@@ -23,17 +24,23 @@ const routes = [{
         name: 'New',
         component: NewView,
       },
-      {
-        path: '',
-        name: 'Products',
-        component: ProductsView,
-      },
+
       {
         path: 'edit/:id',
         name: 'Edit',
         component: EditView,
       },
     ]
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: AboutView,
+  },
+  {
+    path: '/products',
+    name: 'Products',
+    component: ProductsView,
   },
   {
     path: '/cart',
