@@ -10,8 +10,6 @@
   "dependencies": {
     "axios": "^0.26.1",
     "core-js": "^3.8.3",
-    "element-plus": "^2.1.10",
-    "swiper": "^8.1.1",
     "three": "^0.139.2",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
@@ -27,6 +25,6 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "naive-ui": "^2.30.6"
+    "naive-ui": "^2.30.7"
   }
 }

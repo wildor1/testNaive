@@ -4,9 +4,7 @@ import {
 } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import IndexView from '../views/Admin/IndexView.vue'
-import NewView from '../views/Admin/NewView.vue'
 import ProductsView from '../views/ProductsView.vue'
-import EditView from '../views/Admin/EditView.vue'
 import Detail from '../views/DetailView';
 import AboutView from '../views/AboutView';
 
@@ -19,18 +17,6 @@ const routes = [{
     path: '/admin',
     name: 'Admin',
     component: IndexView,
-    children: [{
-        path: 'new',
-        name: 'New',
-        component: NewView,
-      },
-
-      {
-        path: 'edit/:id',
-        name: 'Edit',
-        component: EditView,
-      },
-    ]
   },
   {
     path: '/about',

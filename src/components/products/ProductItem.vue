@@ -1,36 +1,45 @@
 <template>
   <div>
-    <div class="product">
-       <router-link :to="'/detail/' + product._id" class="product-link">
-        <p class="product__name">产品名称：{{product.name}}</p>
-        <p class="product__description">介绍：{{product.description}}</p>
-        <p class="product__price">价格：{{product.price}}</p>
-        <p class="product.manufacturer">生产厂商：{{product.manufacturer.name}}</p>
-        <img :src="product.image" alt="" class="product__image">
-      </router-link>
-      <product-button :product="product"></product-button>
-    </div>
+    <n-watermark
+    content="核心机密"
+    cross
+    selectable
+    :font-size="16"
+    :line-height="16"
+    :width="192"
+    :height="128"
+    :x-offset="12"
+    :y-offset="28"
+    :rotate="-15"
+  >
+    <n-card hoverable=true>
+      <template #cover>
+        <img src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg">
+      </template>
+      <template #header-extra>
+        #header-extra
+      </template>
+      卡片内容
+      <template #footer>
+        {{ product.name }}
+        发货时效:24小时以内
+      </template>
+    </n-card>
+    </n-watermark>
   </div>
 </template>
 
 <style>
-.product {
-  border-bottom: 1px solid black;
-}
-  
-.product__image {
-  width: 100px;
-  height: 100px;
+.n-card {
+  max-width: 300px;
 }
 </style>
 
 <script>
-import ProductButton from './ProductButton';
+import { NCard,NWatermark } from 'naive-ui'
 export default {
   name: 'product-item',
   props: ['product'],
-  components: {
-    'product-button': ProductButton,
-  }
+  components: { NCard ,NWatermark}
 }
 </script>
