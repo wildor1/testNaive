@@ -2,7 +2,26 @@
   <n-space vertical size="large">
     <n-layout>
       <n-layout-header>
-        <header :class="header">
+        <nav class="container flex justify-between px-4 py-8 mx-auto bg-white menuTop">
+          <div>
+            <h3 class="text-2xl font-medium text-blue-500">LOGO</h3>
+          </div>
+          <div class="flex flex-col lg:hidden hoverShow" style="height:30px" @click="changeMenuState">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </div>
+          <div class="space-x-8 navbar-collapse flex-col flex lg:flex-row lg:flex collapse menuItems" :class="{ hidden: menuItems }">
+            <a href="">Home</a>
+            <a href="">About Us</a>
+            <a href="">Blogs</a>
+            <a href="">Our Team</a>
+            <a href="">Contact Us</a>
+          </div>
+        </nav>
+        <!-- <header :class="header"> -->
+        <!-- <header class="header flex flex-col xl:flex-row">
           <span>
             <router-link class="class3" to="/">首页</router-link>
           </span>
@@ -16,11 +35,42 @@
             <router-link to="/about">关于我们</router-link>
           </span>
           <span> 中文 | EN </span>
-        </header>
+        </header> -->
       </n-layout-header>
-      <n-layout-content content-style="padding: 24px;">
+      <!-- <nav class="relative select-none bg-grey lg:flex lg:items-stretch w-full" style="color:red">
+        <div class="flex flex-no-shrink items-stretch h-12">
+          <a href="#"
+            class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Tailwind</a>
+          <a href="#"
+            class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Css</a>
+          <button class="block lg:hidden cursor-pointer ml-auto relative w-12 h-12 p-4">
+            <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+            <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path
+                d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
+            </svg>
+          </button>
+        </div>
+        <div class="lg:flex lg:items-stretch lg:flex-no-shrink lg:flex-grow">
+          <div class="lg:flex lg:items-stretch lg:justify-end ml-auto">
+            <a href="#"
+              class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Item
+              1</a>
+            <a href="#"
+              class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Item
+              2</a>
+            <a href="#"
+              class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Item
+              3</a>
+          </div>
+        </div>
+      </nav> -->
+
+      <!-- <n-layout-content content-style="padding: 24px;">
         <router-view />
-      </n-layout-content>
+      </n-layout-content> -->
       <!-- <nav>
     https://www.apple.com.cn/
     https://www.opposhop.cn/
@@ -29,7 +79,7 @@
     https://www.brateck.com/
   </nav> -->
 
-      <n-layout-footer>
+      <!-- <n-layout-footer>
         <div style="width: 80vw;height:500px">
           <div style="height:400px;">
             <div style="width:20vw;float: left; margin-top:60px;"> 关于立泰特 </div>
@@ -42,7 +92,7 @@
 
           </div>
         </div>
-      </n-layout-footer>
+      </n-layout-footer> -->
     </n-layout>
 
   </n-space>
@@ -53,7 +103,10 @@
 export default {
   name: "App",
   data() {
-    return { header: '' }
+    return {
+      header: '',
+      menuItems: true
+    }
   },
   computed: {},
   mounted() {
@@ -67,6 +120,10 @@ export default {
         this.header = ''
       }
     },
+    changeMenuState() {
+      console.log('changeState')
+      this.menuItems = !this.menuItems
+    }
   },
 };
 </script>
@@ -80,6 +137,25 @@ export default {
   font-size: 20px;
 }
 
+.menuHide {
+  display: none;
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+  flex-grow: 1;
+  align-items: center
+}
+
+.hoverShow:hover .menuHide {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuTop {
+  flex-wrap: wrap;
+  align-items: center;
+}
 
 header {
   width: 100%;

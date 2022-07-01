@@ -4,7 +4,7 @@
     <n-grid-item span="0 m:1 l:2" style="background-color:green">
       <n-card hoverable=true>
         <template #cover>
-          <img src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg">
+          <img src="1.jpg">
         </template>
         <template #header-extra>
           #header-extra
