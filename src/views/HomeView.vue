@@ -15,7 +15,7 @@
         </template>
       </n-card>
     </n-grid-item>
-    <n-grid-item  style="background-color:blue">
+    <n-grid-item style="background-color:blue">
       <div class="green">
         <n-card hoverable=true>
           <template #cover>
@@ -70,12 +70,12 @@
 </template>
 
 <script>
-import { NCard,NGrid ,NGridItem } from 'naive-ui'
+import { NCard, NGrid, NGridItem } from 'naive-ui'
 import SwiperComponent from '@/components/SwiperComponent.vue'
 export default {
   name: 'HomeView',
   components: {
-    SwiperComponent, NCard,NGrid ,NGridItem
+    SwiperComponent, NCard, NGrid, NGridItem
   }
 }
 </script>
@@ -85,6 +85,7 @@ export default {
   position: relative;
   top: 78px
 }
+
 .n-card {
   max-width: 100%;
 }

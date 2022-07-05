@@ -5,8 +5,9 @@ import {
 import HomeView from '../views/HomeView.vue'
 import IndexView from '../views/Admin/IndexView.vue'
 import ProductsView from '../views/ProductsView.vue'
-import Detail from '../views/DetailView';
-import AboutView from '../views/AboutView';
+import Detail from '../views/DetailView.vue';
+import AboutView from '../views/AboutView.vue';
+import NewsView from '../views/NewsView.vue';
 
 const routes = [{
     path: '/',
@@ -22,6 +23,11 @@ const routes = [{
     path: '/about',
     name: 'About',
     component: AboutView,
+  },
+  {
+    path: '/news',
+    name: 'NewsView',
+    component: NewsView,
   },
   {
     path: '/products',
