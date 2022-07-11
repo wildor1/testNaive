@@ -1,23 +1,27 @@
 <template>
-  <nav :class="header" style="width:100vw;background-color:rgba(255,255,255,0.8);">  
-    <div class="container flex justify-between mx-auto bg-white menuTop"
-      style="height:70px;position: relative;">
+  <nav :class="header"
+    style="width:100vw;background-color:rgba(255,255,255,0.8);border-bottom: 1px solid #e6e6e6;height: 70px;">
+    <div class="flex justify-between menuTop w-screen" style="position: relative;z-index: 9999; margin:20px  0 ;">
       <div>
-        <h3 class="text-2xl font-medium text-blue-500">LiTight</h3>
+        <h3 class="text-2xl font-medium text-blue-500 mx-20">LiTight</h3>
       </div>
-      <div class="flex flex-col lg:hidden hoverShow" style="height:30px" @click="changeMenuState">
+      <div class="flex flex-col lg:hidden hoverShow mx-20" @click="changeMenuState">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </div>
-      <div class="box-border flex flex-1 flex-col collapse menuItems lg:flex-row lg:flex lg:flex-initial"
-        :class="{ hidden: menuItems }" style="background-color:rgba(255,255,255,0.8)">
-        <router-link to="/">首页</router-link>
+      <div
+        class="box-border bg-white bg-opacity-90 flex flex-1 flex-col collapse  lg:bg-transparent  lg:flex-row lg:mx-20 lg:flex lg:flex-initial"
+        :class="{ hidden: menuItems }" @click="changeMenuState">
+        <router-link to="/" class="m-1  border-b border-solid border-gray-300 lg:border-b-0 ">首页</router-link>
         <!-- <a href="">Home</a> -->
-        <router-link to="/products">产品</router-link>
-        <router-link to="/news">信息文章</router-link>
-        <router-link to="/about">关于我们</router-link>
-        <router-link to="/admin">服务中心</router-link>
+        <router-link to="/products" class="m-1 border-b border-solid border-gray-300 lg:border-b-0">产品</router-link>
+        <router-link to="/news" class="m-1 lg:hover:bg-opacity border-b border-solid border-gray-300 lg:border-b-0">信息文章
+        </router-link>
+        <router-link to="/about" class="m-1 lg:hover:bg-opacity border-b border-solid border-gray-300 lg:border-b-0">
+          关于我们</router-link>
+        <router-link to="/admin" class="m-1  lg:hover:bg-opacity border-b border-solid border-gray-300 lg:border-b-0">
+          服务中心</router-link>
         <!-- <span style="padding:10px"> 中文 | EN </span> -->
       </div>
     </div>
@@ -31,29 +35,19 @@
     <router-view></router-view>
   </div>
   <!-- https://www.apple.com.cn/
+  https://www.yueicaster.co.jp/en
     https://www.opposhop.cn/
     https://www.huawei.com/
     https://www.ikea.cn/
     https://www.brateck.com/ -->
-
-  <n-layout-footer>
-    <div style="width: 80vw;height:500px">
-      <div style="height:400px;">
-        <div style="width:20vw;float: left; margin-top:60px;"> 关于立泰特 </div>
-        <div style="width:20vw;float: left; margin-top:60px;">我们的产品 </div>
-        <div style="width:20vw;float: left; margin-top:60px">服务与支持</div>
-      </div>
-      <div style=" width:100%;padding-top:6px; margin:6px 0px 0px 40px; border-top:1px solid #e2e2e2;text-align: left;">
-        Copyright © 2022 LiTight Inc. 苏ICP备10214630
-
-      </div>
-    </div>
-  </n-layout-footer>
+<footer-view-vue />
+  
 
 </template>
 
 
 <script>
+import FooterViewVue from './components/FooterView.vue';
 export default {
   name: "App",
   data() {
@@ -79,6 +73,7 @@ export default {
       this.menuItems = !this.menuItems
     }
   },
+  components:{FooterViewVue}
 };
 </script>
 <style>
@@ -122,9 +117,9 @@ export default {
   position: fixed;
   top: 0;
   animation: slide-down 0.7s;
-  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.349019607843137);
-  -webkit-box-shadow: 0px 0px 5px rgb(0 0 0 / 35%);
-  box-shadow: 0px 0px 5px rgb(0 0 0 / 35%);
+  -moz-box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.349019607843137);
+  -webkit-box-shadow: 2px 0px 10px rgb(0 0 0 / 35%);
+  box-shadow: 2px 0px 10px rgb(0 0 0 / 35%);
   z-index: 9999;
 }
 
@@ -149,7 +144,7 @@ nav a {
   font-weight: 100;
   color: #333;
   text-decoration: none;
-  padding: 10px;
+  padding: 0 20px;
 }
 
 nav a:hover {
