@@ -5,10 +5,12 @@ module.exports = {
   theme: {
     flex: {
       '1': '0 1 100%',
-     '2': '2 2 0%',
+      '2': '2 2 0%',
+      '66':'0 1 66%',
+      '33':'0 1 33%',
       auto: '1 1 auto',
-     initial: '0 1 auto',
-     inherit: 'inherit',
+      initial: '0 1 auto',
+      inherit: 'inherit',
       none: 'none',
     }
   },
