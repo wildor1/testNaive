@@ -1,16 +1,8 @@
 <template>
-  <n-carousel autoplay=true interval=4000 effect="custom"  trigger="hover"
-    :transition-props="{ name: 'creative' }" show-arrow class="relative" style="height:calc(100vw / 3);">
-    <section class="relative yes">
-      <!-- pic size 1920 × 640 -->
-      <img src="1.jpg" alt="" srcset="" class="carousel-img" />
-      <div class="absolute">
-        <p class="">专业的医疗台车</p>
-        <p class="">质量良好</p>
-      </div>
-    </section>
+  <n-carousel autoplay=true interval=4000 effect="custom" current-index=0 default-index=0 trigger="hover"
+    dot-type="line" :transition-props="{ name: 'creative' }" class="relative" style="height:calc(100vw / 2.5);">
+    <img src="1.jpg" alt="" srcset="" class="carousel-img" />
     <img src="2.jpg" alt="" class="carousel-img" />
-    
     <div class="relative overflow-hidden bg-no-repeat bg-cover shadow-lg rounded-lg" style="background-position: 50%;"
       data-mdb-ripple="true" data-mdb-ripple-color="light">
       <img src="https://mdbootstrap.com/img/new/standard/nature/051.jpg" class="w-full" />
@@ -32,45 +24,50 @@
 </template>
 
 <script>
-import { NCarousel } from "naive-ui"
-export default {
-  name: "SwiperComponent",
-  components: {
+  import {
     NCarousel
-  },
-};
+  } from "naive-ui"
+  export default {
+    name: "SwiperComponent",
+    components: {
+      NCarousel
+    },
+  };
 </script>
 
 <style scoped>
-.yes{
-  background-color: red;
-}
-.contentClass{
-  visibility: hidden;
-content: "1233";
+  .yes {
+    background-color: red;
+  }
 
-}
-.n-carousel__slides{
-  content: "1233";
-}
-.carousel-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
+  .contentClass {
+    visibility: hidden;
+    content: "1233";
 
-.textarea {
-  background: #0d396a;
-}
+  }
 
-:deep(.creative-enter-from),
-:deep(.creative-leave-to) {
-  opacity: 0;
-  transform: scale(0.9);
-}
+  .n-carousel__slides {
+    content: "1233";
+  }
 
-:deep(.creative-enter-active),
-:deep(.creative-leave-active) {
-  transition: all 0.3s ease;
-}
+  .carousel-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .textarea {
+    background: #0d396a;
+  }
+
+  :deep(.creative-enter-from),
+  :deep(.creative-leave-to) {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  :deep(.creative-enter-active),
+  :deep(.creative-leave-active) {
+    transition: all 0.3s ease;
+  }
 </style>
